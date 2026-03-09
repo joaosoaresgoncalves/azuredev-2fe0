@@ -1,2 +1,16 @@
-openai~=2.0.1
-ansible-core~=2.17.0
+# === Agent + LLM Tools ===
+aisuite[openai]==0.1.11
+openai
+docstring-parser
+python-dotenv
+
+# === Web Framework + API ===
+fastapi
+pydantic
+pydantic[email]
+requests
+sqlalchemy
+uvicorn
+
+# === Notebook ===
+ipykernel
