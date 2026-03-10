@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
   },
-  "postCreateCommand": "pip install -r requirements.txt",
+  "postCreateCommand": "pip install -r requirements.txt && python -m ipykernel install --user --name=python3 --display-name='Python 3.11'",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -18,11 +18,11 @@
       }
     }
   },
-  "forwardPorts": [8000],
+  "forwardPorts": [8765],
   "portsAttributes": {
-    "8000": {
-      "label": "Application",
-      "onAutoForward": "notify"
+    "8765": {
+      "label": "Email Service",
+      "onAutoForward": "silent"
     }
   }
 }
