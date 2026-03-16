@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
   },
-  "postCreateCommand": "pip install --user -r requirements.txt && python -m ipykernel install --user --name=python3 --display-name='Python 3.11'",
+  "postCreateCommand": "pip install --user -r requirements.txt && python -m ipykernel install --user --name=python3 --display-name='Python 3.11' && curl -fsSL https://claude.ai/install.sh | bash",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -17,6 +17,9 @@
         "python.defaultInterpreterPath": "/usr/local/bin/python"
       }
     }
+  },
+  "remoteEnv": {
+    "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
   },
   "forwardPorts": [8765],
   "portsAttributes": {
